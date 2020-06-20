@@ -13,7 +13,7 @@ export class NumbersService {
   pointsForCorrectGuess = 1;
   pointsToWin = 10;
   scoreChange: Subject<boolean> = new Subject<boolean>();
-  leaderBoard:any = [];
+  leaderBoard: any = [];
   leaderBoardChange: Subject<object> = new Subject<object>();
   startTime: number;
 
@@ -73,35 +73,33 @@ export class NumbersService {
   endGame(win = false) {
     // take time to grab time and score and ask for name and save to db
     // let text;
-    const name = prompt('game over, what is your name for the scoreboard, would you like to play again?');
-    console.log(name);
+    let name = prompt('game over, what is your name for the scoreboard, would you like to play again?');
+    if (win) {
+      name = prompt('You are the winner! leave you name and play again');
+    }
     const endTime = performance.now();
     const timeTaken = Math.round((endTime - this.startTime) / 1000);
     const itemToStore = {
       name, score: this.score, time: timeTaken
-    }
+    };
 
-    this.saveFileData(itemToStore).subscribe(data => this.leaderBoardChange.next(data))
+    this.saveFileData(itemToStore).subscribe(data => this.leaderBoardChange.next(data));
     // this.deleteFile();
 
 
-    if (win) {
-      console.log(Math.round(timeTaken / 1000), 'seconds');
-    }
     // max score from game is 110 for everysecond a score out of 100 goes down
     this.resetGame();
   }
 
 
   getFileData() {
-    this.http.get('/highscores', { responseType: 'json' }).subscribe(data=>{
-      console.log(data)
+    this.http.get('/highscores', { responseType: 'json' }).subscribe(data => {
       this.leaderBoard = data;
     });
   }
 
   saveFileData(data) {
-    return this.http.post('/highscores', { data }, { responseType: 'json' })
+    return this.http.post('/highscores', { data }, { responseType: 'json' });
   }
 
 

@@ -8,7 +8,6 @@ import { NumbersService } from '../../services/numbers.service';
 })
 export class ScoreComponent implements OnInit {
   leaderInFormat: any = [];
-  // leaderboard: string[];
   constructor(private numbersService: NumbersService) {
   }
   get score() {
@@ -19,7 +18,7 @@ export class ScoreComponent implements OnInit {
     console.log(this.numbersService.leaderBoard);
     if (this.numbersService.leaderBoard.length) {
       this.formatResults(this.numbersService.leaderBoard);
-    };
+    }
     return this.numbersService.leaderBoard;
   }
   ngOnInit(): void {
@@ -42,10 +41,9 @@ export class ScoreComponent implements OnInit {
         }
       }
     }, []).slice(0, 3);
-    this.leaderInFormat = sortedResults.map(item=>{
+    this.leaderInFormat = sortedResults.map(item => {
       return `${item.data.name} ${item.data.score} points`;
-    })
-    console.log(data);
+    });
   }
 
 }

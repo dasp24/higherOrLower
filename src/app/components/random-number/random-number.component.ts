@@ -9,7 +9,6 @@ import { Subject } from 'rxjs';
 })
 export class RandomNumberComponent implements OnInit {
   constructor(private numbersService: NumbersService) {
-    // this.number = numbersService.number;
    }
 
    get number(): number {

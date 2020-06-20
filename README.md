@@ -1,27 +1,18 @@
-# HigherOrLower
+to run this project I am using node and Angular 9. Please make sure to download the relevant dependancies.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+run `npm i` to download the local dependancies
+also please install json-server glabally using 
 
-## Development server
+`npm i -g json-server`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Once you have all the depancies please run npm start. I had to use a proxy for the fake BE server which you'll see in the code.
 
-## Code scaffolding
+on a separate terminal please run 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`json-server --watch  highscores.json` to start the fake server
 
-## Build
+Going forward I will remove the prompt at the end and use the router to show either a game over page or congradulations page
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+I also want to have a start page so the user doesn't jump straight into the game
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+And really I need to move all the items to do with the server from my numbers service to its own section for proper BE integration.
