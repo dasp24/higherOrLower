@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.flex-row-container {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+  }
+
+  .centre {
+    justify-content: center;
+}
