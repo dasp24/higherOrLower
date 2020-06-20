@@ -3,8 +3,15 @@
     display: flex;
     position: relative;
     flex-direction: row;
+    justify-content: center;
   }
 
   .centre {
     justify-content: center;
+}
+
+.flex-column-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
 }

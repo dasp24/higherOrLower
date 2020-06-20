@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NumbersService } from 'src/app/services/numbers.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-random-number',
@@ -6,20 +8,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./random-number.component.scss']
 })
 export class RandomNumberComponent implements OnInit {
-  number: number;
-  constructor() { }
+  constructor(private numbersService: NumbersService) {
+    // this.number = numbersService.number;
+   }
+
+   get number(): number {
+    return this.numbersService.number;
+}
+
 
   ngOnInit(): void {
-    this.generateNumber();
+    this.numbersService.generateNumber();
   }
 
-  generateNumber(oldNumber?) {
-    const newNumber = Math.ceil(Math.random() * 100);
-    if (oldNumber !== newNumber) {
-      this.number = newNumber;
-    } else {
-      this.generateNumber(oldNumber);
-    }
-  }
+  generateNumber(): void {
 
+
+  }
+  // const newNumber = Math.ceil(Math.random() * 100);
+  // if (oldNumber !== newNumber) {
+  //   this.number = newNumber;
+  // } else {
+  //   this.generateNumber(oldNumber);
+  // }
 }
+
+
