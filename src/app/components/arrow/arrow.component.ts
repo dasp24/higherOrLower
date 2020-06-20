@@ -8,7 +8,7 @@ import { NumbersService } from '../../services/numbers.service';
 })
 export class ArrowComponent implements OnInit {
 
-  @Input() direction;
+  @Input() direction: string;
   constructor(private numberService: NumbersService) { }
 
   ngOnInit(): void {
@@ -16,7 +16,7 @@ export class ArrowComponent implements OnInit {
 
   guessAndGenerate() {
     // this.numberService.guess(this.direction);
-    this.numberService.generateNumber();
+    this.numberService.generateNumberAndGuess(this.direction);
   }
 
 }

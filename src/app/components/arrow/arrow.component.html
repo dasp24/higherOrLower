@@ -1,1 +1,2 @@
 <div (click)="guessAndGenerate()" [ngClass]="{'arrow_up': direction === 'up', 'arrow_down': direction === 'down'}"></div>
+<p (click)="guessAndGenerate()" [ngClass]="{'higher':direction === 'up', 'lower': direction === 'down'}">{{direction === 'up'? 'higher': 'lower'}}</p>

@@ -18,19 +18,8 @@ export class RandomNumberComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.numbersService.generateNumber();
+    this.numbersService.generateNumberAndGuess();
   }
-
-  generateNumber(): void {
-
-
-  }
-  // const newNumber = Math.ceil(Math.random() * 100);
-  // if (oldNumber !== newNumber) {
-  //   this.number = newNumber;
-  // } else {
-  //   this.generateNumber(oldNumber);
-  // }
 }
 
 
