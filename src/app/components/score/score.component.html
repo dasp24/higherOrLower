@@ -2,3 +2,9 @@
   <p>Your score</p>
   <a class="score">{{score}}</a>
 </div>
+<a style="display: none;">{{leaderBoard.length}}</a>
+<div class="flex-column-container highscores" *ngIf="leaderInFormat.length && leaderBoard">
+    <p>highscores</p>
+    <ul *ngFor="let leader of leaderInFormat">{{leader}}
+    </ul>
+</div>

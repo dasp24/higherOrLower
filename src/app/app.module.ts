@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { RandomNumberComponent } from './components/random-number/random-number.component';
 import { ArrowComponent } from './components/arrow/arrow.component';
 import { ScoreComponent } from './components/score/score.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,11 @@ import { ScoreComponent } from './components/score/score.component';
     RandomNumberComponent,
     ArrowComponent,
     ScoreComponent,
-    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
